@@ -1,28 +1,108 @@
-<div class="pt-8">
-  <img
-    alt="Drewh cloud enterprises logo"
-    class="max-w-full hover:animate-spin w-[500px]"
-    src="/wordart2.png"
-  />
+<style is:global>
+  body {
+    background: #f5f5fa;
+  }
+  :root {
+    --halftone-shadow-distance: 1rem;
+    --halftone-dot-size: 0.05rem;
+  }
+
+  .halftone-d-2 {
+    --halftone-shadow-distance: 0.2rem; /* Adjust this value as needed */
+  }
+  .halftone-d-4 {
+    --halftone-shadow-distance: 0.4rem; /* Adjust this value as needed */
+  }
+  .halftone-d-6 {
+    --halftone-shadow-distance: 0.6rem; /* Adjust this value as needed */
+  }
+
+  .halftone-shadow::before {
+    top: var(--halftone-shadow-distance) !important;
+    transform: translate3d(
+      var(--halftone-shadow-distance),
+      var(--halftone-shadow-distance),
+      0
+    );
+    background-image: radial-gradient(
+        circle at center,
+        #000 var(--halftone-dot-size),
+        transparent 0
+      ),
+      radial-gradient(
+        circle at center,
+        #000 var(--halftone-dot-size),
+        transparent 0
+      );
+    background-size: 0.2rem 0.2rem;
+    background-position:
+      0 0,
+      0.1rem 0.1rem;
+  }
+
+  .halftone-shadow::after {
+    background: inherit;
+    border-radius: inherit;
+  }
+
+  .halftone-shadow::after,
+  .halftone-shadow::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .halftone-shadow {
+    position: relative;
+  }
+
+  legend,
+  fieldset {
+    padding: 0;
+  }
+  body {
+    font-family: monospace;
+  }
+</style>
+
+<!-- <div class="pt-8"> -->
+<!--   <img -->
+<!--     alt="Drewh cloud enterprises logo" -->
+<!--     class="max-w-full hover:animate-spin w-[500px]" -->
+<!--     src="/wordart2.png" -->
+<!--   /> -->
+<!-- </div> -->
+
+<div class="fixed bg-gray-500 text-white p-1 px-2 top-8 right-8">
+  <a class="underline" href="https://cloud.drewh.net/dashboard/login">Login </a>
 </div>
 
-<div class="p-16 md:max-w-[50%] m-auto flex flex-col">
-  <div class="md:text-lg">
-    <div class="italic text-sm mb-8">
-      An enterprise cloud provder for your enterprise projects!
-    </div>
-    <div class="text-xl">We Do:</div>
-    <li>Databases</li>
-    <li>Container Deployment</li>
-    <li>Static Site Hosting</li>
-    <li>Cloud Functions</li>
-    <li>Other Stuff</li>
-  </div>
-
-  <div class="opacity-65 mt-14">
-    For more info and to join the beta, email <a
-      class="underline"
-      href="mailto:harrisd@smu.edu">harrisd@smu.edu</a
+<div class="p-[16px] md:max-w-[50%] m-auto mt-28">
+  <fieldset
+    class="border-2 px-8 border-black flex flex-col halftone-shadow p-[16px] bg-white"
+  >
+    <legend class="font-bold font-mono text-lg px-2"
+      >Drewh Cloud Enterprises</legend
     >
-  </div>
+
+    <div class="">
+      <div class="">We Do:</div>
+      <li>Databases</li>
+      <li>Container Deployment</li>
+      <li>Static Site Hosting</li>
+      <li>Cloud Functions</li>
+      <li>Other Stuff</li>
+    </div>
+
+    <div class="opacity-65 mt-4 mx-auto">
+      For more info and to join the beta, email <a
+        class="underline"
+        href="mailto:harrisd@smu.edu">harrisd@smu.edu</a
+      >
+    </div>
+  </fieldset>
 </div>
